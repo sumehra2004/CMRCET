@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        #thankyou {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+    <script>
+        function showThankYou() {
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('thankyou').style.display = 'block';
+            return false; // Prevent actual form submission
+        }
+    </script>
+</head>
+<body>
+
+<h2 align="center">Registration Form</h2>
+
+<div id="form-container">
+    <form onsubmit="return showThankYou();">
+        <table border="0" align="center">
+            <tbody>
+                <tr>
+                    
+                    <td> Name:<input id="name" maxlength="50" name="name" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="hallticket">Hall Ticket Number: </label></td>
+                    <td><input id="hallticket" maxlength="50" name="hallticket" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone Number: </label></td>
+                    <td><input id="phone" maxlength="15" name="phone" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Mail ID: </label></td>
+                    <td><input id="email" maxlength="50" name="email" type="email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender: </label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="Other">
+                        <label for="other">Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="age">Age: </label></td>
+                    <td><input id="age" maxlength="3" name="age" type="number" min="1" /></td>
+                </tr>
+                <tr>
+                    <td><label for="nationality">Nationality: </label></td>
+                    <td><input id="nationality" maxlength="50" name="nationality" type="text" /></td>
+                </tr>
+                <tr>
+                    <td align="right"><input name="Submit" type="submit" value="Submit" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div id="thankyou">
+    <h2>Thank you for your registration!</h2>
+    <p>Your form has been submitted successfully.</p>
+</div>
+
+</body>
+</html>
